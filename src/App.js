@@ -13,9 +13,10 @@ import regionImg from "./assets/region.jpg"
 import img1 from "./assets/avatar1.png"
 import img2 from "./assets/avatar2.png"
 import img3 from "./assets/avatar3.png"
-// import img4 from "./assets/avatar4.png"
 import img5 from "./assets/avatar5.png"
 import img6 from "./assets/avatar6.png"
+import imgH from "./assets/4.png"
+
 
 
 
@@ -76,37 +77,37 @@ function App() {
           <h5>Feeds</h5>
           <table >
             <FeedsTr1>
-              <td><i class="fa fa-user w3-text-blue w3-large" ></i></td>
+              <td><i class="fa fa-user w3-large" style={{ color: "#2196F3", fontSize: 18}}></i></td>
               <td>New record, over 90 views.</td>
               <td><i>10 mins</i></td>
             </FeedsTr1>
             <FeedsTr2>
-              <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
+              <td><i class="fa fa-bell w3-large" style={{ color: "#f44336" , fontSize: 18}}></i></td>
               <td>Database error.</td>
               <td><i>15 mins</i></td>
             </FeedsTr2>
             <FeedsTr1>
-              <td><i class="fa fa-users w3-text-yellow w3-large"></i></td>
+              <td><i class="fa fa-users w3-large" style={{ color: "#d2be0e" , fontSize: 18}}></i></td>
               <td>New record, over 40 users.</td>
               <td><i>17 mins</i></td>
             </FeedsTr1>
             <FeedsTr2>
-              <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
+              <td><i class="fa fa-comment w3-large" style={{ color: "#f44336" , fontSize: 18}}></i></td>
               <td>New comments.</td>
               <td><i>25 mins</i></td>
             </FeedsTr2>
             <FeedsTr1>
-              <td><i class="fa fa-bookmark w3-text-blue w3-large"></i></td>
+              <td><i class="fa fa-bookmark w3-large" style={{ color: "#2196F3" , fontSize: 18}}></i></td>
               <td>Check transactions.</td>
               <td><i>28 mins</i></td>
             </FeedsTr1>
             <FeedsTr2>
-              <td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
+              <td><i class="fa fa-laptop w3-large" style={{ color: "#f44336" , fontSize: 18}}></i></td>
               <td>CPU overload.</td>
               <td><i>35 mins</i></td>
             </FeedsTr2>
             <FeedsTr1>
-              <td><i class="fa fa-share-alt w3-text-green w3-large"></i></td>
+              <td><i class="fa fa-share-alt w3-large" style={{ color: "#4CAF50" , fontSize: 18}}></i></td>
               <td>New shares.</td>
               <td><i>39 mins</i></td>
             </FeedsTr1>
@@ -190,10 +191,10 @@ function App() {
             </Comments>
           </CommentsContainer>
           <CommentsContainer>
-            <img src={img1}/>
+            <img src={imgH} style={{backgroundColor:"white"}}/>
             <Comments>
-              <h4>Bo <span class="w3-opacity w3-medium">Sep 28, 2014, 10:15 PM</span></h4>
-              <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h4>Ha <span class="w3-opacity w3-medium">Mar 26, 2025, 11:28 PM</span></h4>
+              <p>Sajucha dadle fighting eepnida!! guajaeboda jaemichnaeyo haha</p>
             </Comments>
           </CommentsContainer>
 
@@ -257,6 +258,9 @@ const FirstContainer = styled.div`
 
   @media only screen and (max-width: 993px) {
     margin-left: 0px;
+  }
+  @media only screen and (max-width: 600px) {
+    padding-right: 64px;
   }
 `;
 
@@ -329,6 +333,9 @@ const RegionsContainer = styled.div`
 
   width: 33.33333%; //모바일 일때는 100%
   padding-right:12px; // 모바일일때는 없애야함!
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
 
   h5{
     font-family: "Raleway", sans-serif;
@@ -342,7 +349,14 @@ const FeedsContainer = styled.div`
   display:flex;
   flex-direction: column;//아래로
 
+  table {
+    border-collapse: collapse; // table 내에 테두리 없애기 !
+  }
+
   width: 66.66666%; //모바일 일때는 100%
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
 
   h5{
     font-family: "Raleway", sans-serif;
@@ -361,6 +375,12 @@ const FeedsTr1 = styled.tr`
   height:38.5px;
 
   background-color:rgb(255, 255, 255);
+  td{
+    padding:8px;
+    i{
+      padding-left:8px;
+    }
+  }
 `;
 
 const FeedsTr2 = styled.tr`
@@ -370,6 +390,13 @@ const FeedsTr2 = styled.tr`
   height:38.5px;
 
   background-color: #f1f1f1;
+
+  td{
+    padding:8px;
+    i{
+      padding-left:8px;
+    }
+  }
 `;
 
 const ThirdContainer = styled.div`
@@ -428,6 +455,7 @@ const CountriesTable = styled.table`
   background-color: #fff !important;
   width: 100%;
   border: 1px solid #ddd;
+  border-collapse: collapse; // table 내에 테두리 없애기 !
   tr{
     font-size: 15px;
     line-height: 1.5;
@@ -585,6 +613,7 @@ const FourthContainer = styled.div`
   }
   @media only screen and (max-width: 600px) {
     flex-direction: column;
+    padding-right: 48px;
   }
 `;
 const MiniContainer = styled.div`
@@ -603,7 +632,5 @@ const MiniContainer = styled.div`
 
   @media only screen and (max-width: 600px) {
     width: 100%;
-    margin-right:16px;
-    padding-right: 0.01em 16px;
   }
 `;
