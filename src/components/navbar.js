@@ -154,7 +154,9 @@ const Overlay = styled.div`
   background: rgba(0, 0, 0, 0.5);
   z-index: 15;
 
+
   animation: ${({ isOpen }) => (isOpen ? fadeIn : fadeOut)} 0.4s ease-in-out;
+
 `;
 
 const Nav = styled.nav`

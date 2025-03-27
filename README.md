@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# 참고 블로그
+
+https://www.daleseo.com/css-position-fixed-navigation/
+https://velog.io/@bami/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A9%94%EB%89%B4
+https://velog.io/@syoung125/CSS-%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9-%EB%94%94%EC%9E%90%EC%9D%B8-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0
+
+세상엔 참 똑똑한 사람덜이 많아
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
