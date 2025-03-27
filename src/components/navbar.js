@@ -70,7 +70,7 @@ function Navbar({ isOpen, toggleSidebar }) {
       </DashBoard>
 
     </Nav>
-    {isOpen && <Overlay onClick={toggleSidebar} />}
+    {isOpen && <Overlay onClick={toggleSidebar} isOpen={isOpen}/>}
     </>
 
   );
@@ -97,6 +97,24 @@ const slideOut = keyframes`
   }
 `;
 
+//딤처리 애니메이션
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
 
 const CloseButton = styled.button`
   width: 100%;
@@ -135,6 +153,8 @@ const Overlay = styled.div`
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 15;
+
+  animation: ${({ isOpen }) => (isOpen ? fadeIn : fadeOut)} 0.4s ease-in-out;
 `;
 
 const Nav = styled.nav`
