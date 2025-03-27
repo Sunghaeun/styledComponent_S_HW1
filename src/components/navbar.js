@@ -94,6 +94,24 @@ const slideOut = keyframes`
   }
 `;
 
+//딤처리 애니메이션
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
 
 const CloseButton = styled.button`
   position: absolute;
@@ -114,6 +132,9 @@ const Overlay = styled.div`
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 15;
+  //display 처리해서 깜빡이는 현상 방지
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  animation: ${({ isOpen }) => (isOpen ? fadeIn : fadeOut)} 0.6s ease-in-out;
 `;
 
 const Nav = styled.nav`
