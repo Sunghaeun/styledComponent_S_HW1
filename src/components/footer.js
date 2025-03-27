@@ -36,4 +36,8 @@ const FooterContainer = styled.div`
   a{
     color: #000 !important;
   }
+
+  @media only screen and (max-width: 993px) {
+    margin-left: 0px;
+  }
 `;

@@ -9,7 +9,6 @@ function Navbar({ isOpen, toggleSidebar }) {
   return(
     <>
     <Nav isOpen={isOpen}>
-      <CloseButton onClick={toggleSidebar}>&times;</CloseButton>
       <Mypagecontainer>
         <Imgbox>
           <img src={profile} />
@@ -27,6 +26,10 @@ function Navbar({ isOpen, toggleSidebar }) {
       </Mypagecontainer>
       <DashBoard>
         <h5>Dashboard</h5>
+        <CloseButton onClick={toggleSidebar}>
+          <i class="fa fa-remove fa-fw"></i>
+          <span>Close Menu</span>
+        </CloseButton>
         <Boards>
           <i class="fa fa-users fa-fw"></i>
           <span>Overview</span>
@@ -114,14 +117,32 @@ const fadeOut = keyframes`
 `;
 
 const CloseButton = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: black;
+  width: 100%;
+  height: 54.5px;
+  display: block;
+  padding: 8px 16px;
+  text-align: left;
+  border:none;
+  background-color:#616161;
+  color:white;
+
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  span{
+    padding-left:8px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  &:hover {
+    background-color:rgb(0, 0, 0);
+    cursor: pointer;
+  }
   cursor: pointer;
+
+  @media only screen and (min-width: 993px) {
+    display:none;
+  }
 `;
 
 const Overlay = styled.div`
@@ -138,7 +159,6 @@ const Overlay = styled.div`
 `;
 
 const Nav = styled.nav`
-  animation: animateleft 0.4s;
   z-index:3;
   width:300px;
   display: block !important;
@@ -152,7 +172,7 @@ const Nav = styled.nav`
   line-height: 1.5;
   left: ${({ isOpen }) => (isOpen ? "0" : "-100%")}; 
   transition: left 0.4s ease-in-out;
-  animation: ${({ isOpen }) => (isOpen ? slideIn : slideOut)} 0.4s ease-in-out;
+  animation: ${({ isOpen }) => (isOpen ? slideIn : slideOut)} 0.5s ease-in-out;
   
   @media only screen and (min-width: 993px) {
     left: 0; 
