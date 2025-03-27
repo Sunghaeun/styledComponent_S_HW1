@@ -70,7 +70,7 @@ function Navbar({ isOpen, toggleSidebar }) {
       </DashBoard>
 
     </Nav>
-    {isOpen && <Overlay onClick={toggleSidebar} />}
+    {isOpen && <Overlay onClick={toggleSidebar} isOpen={isOpen}/>}
     </>
 
   );
@@ -153,9 +153,10 @@ const Overlay = styled.div`
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 15;
-  //display 처리해서 깜빡이는 현상 방지
-  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
-  animation: ${({ isOpen }) => (isOpen ? fadeIn : fadeOut)} 0.6s ease-in-out;
+
+
+  animation: ${({ isOpen }) => (isOpen ? fadeIn : fadeOut)} 0.4s ease-in-out;
+
 `;
 
 const Nav = styled.nav`
